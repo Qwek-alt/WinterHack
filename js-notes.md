@@ -1,12 +1,11 @@
-# JAVASCRIPT CHEATSHEET
-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+# JAVASCRIPT/REACT NOTES
+> resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 ---
 <details>
 <summary>Table of Contents</summary>
 
-- [JAVASCRIPT CHEATSHEET](#javascript-cheatsheet)
-  - [> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](#-httpsdevelopermozillaorgen-usdocswebjavascriptguide)
-  - [</details>](#details)
+- [JAVASCRIPT/REACT NOTES](#javascriptreact-notes)
+  - [> resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](#-resource-httpsdevelopermozillaorgen-usdocswebjavascriptguide)
   - [comments](#comments)
   - [printing/console logging](#printingconsole-logging)
   - [Variables](#variables)
@@ -30,7 +29,10 @@
     - [`throw` statement](#throw-statement)
     - [`try..catch` statement](#trycatch-statement)
 - [REACT](#react)
+  - [proporties](#proporties)
+
 </details>
+
 ---
 ## comments
 * `// single line comment`
@@ -184,8 +186,9 @@ switch (expression/variable) {
 ### `throw` statement
 ### `try..catch` statement
 
-
+---
 # REACT
+> resource: https://reactjs.org/
 * components
   * function components
     * hooks
@@ -194,4 +197,90 @@ switch (expression/variable) {
 * states
   * app state
   * global state
+```javascript
+function App(){
+  return (
+    <> // parent element
+    </>
+  )
+}
+```
+* can only have 1 parent element
+  * can be `<div>...</div>` or `<>...</>`
+* JSX
+  * `<html>{javascript statement}</html>`
+* Component.js
+  ```javascript
+  // in ./components/Component.js
+  // emmet: rafce
+  const Component = () => {
+    return (
+      ... //JSX code
+    )
+  }
+  ```
+  * in App.js (function component):
+  ```javascript
+  import Component from './components/Component' //import the component
 
+  function App(){
+    return(
+      <div>
+        <Component />  // include in main div via XML tag
+      </div>
+    )
+  }
+  ```
+  * in App.js (class component)
+  ```javascript
+  import React from 'react'  // import react
+
+  import Component from './components/Component' // import component
+
+  class App extends React.Component {
+    render(){
+      return (
+        <div>
+          <Component />
+        </div>
+    }
+  }
+  ```
+---
+## proporties
+* `<Component property=value />`
+  * `const Component = (props) =>... {props.property}`
+  * `cont component = ({property}) => ... {property}`
+* Default properties
+  ```javascript
+  Component.defaultProps = {
+    property: value,
+    ...
+  }
+  ```
+* Prop Types
+  ```javascript
+  import PropTypes from 'prop-types'
+
+  Component.propTypes = {
+    property: PropTypes.type,
+    ...
+  }
+  ```
+  * type: `sting`, `isRequired`, ...
+* Styling
+  1. index.css
+  2. styled components package
+  3. css in javascript
+    ```javascript
+     // in-line with double curly brackets
+    <h1 style={{color: 'red', ...}}> ... </h1>
+
+    // separate object
+    <h1 style={headingStyle}> ... </h1>
+    
+    const headingStyle = {
+      color: 'red',
+      ...
+    }
+    ```
