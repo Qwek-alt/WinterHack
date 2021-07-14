@@ -1,11 +1,15 @@
 import React from 'react'
 import Flashcard from './Flashcard'
 
-const FlashcardList = ({ flashcards }) => {
+const FlashcardList = ({ flashcards, onDelete }) => {
     return (
         <div>
             {flashcards.map((flashcard) => (
-                <Flashcard key={flashcard.id} flashcard={flashcard} />
+                <Flashcard 
+                    key={flashcard.id}
+                    flashcard={flashcard}
+                    onDelete={onDelete}
+                />
             ))}
         </div>
     )

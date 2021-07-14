@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './index.css'
+
+import { FaTrashAlt } from 'react-icons/fa'
 import Header from './components/Header'
 import FlashcardList from './components/FlashcardList'
 import AddFlashcard from './components/AddFlashcard'
@@ -33,7 +35,6 @@ function App() {
   }
 
 
-
   return (
     <div className="App">
       <Header 
@@ -46,8 +47,9 @@ function App() {
       {flashcards.length > 0 ? (
         <FlashcardList
           flashcards={flashcards}
+          onDelete={deleteFlashcard}
         />)
-        : ('No Flashcards To Show 🤷')
+        : (<p><br></br>No Flashcards To Show. 🤷</p>)
       }
 
     </div>
