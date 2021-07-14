@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200;400&display=swap');
 
 :root{
   font-family: 'Varela Round', sans-serif;
@@ -7,7 +8,7 @@
   --text-secondary: #4c4b8eff;
   --bg-primary: #ab9df2ff;
   --bg-secondary: #27274bff;
-  --btn-primary: #4c4b8eff;
+  --btn-primary: #00BFB2;
 }
 
 *{
@@ -78,6 +79,7 @@ body {
 }
 
 .tag{
+  font-family: 'Encode Sans SC', sans-serif;
   background-color: grey;
   border: none;
   border-radius: 25px;
@@ -110,4 +112,25 @@ body {
 }
 
 
+.add-form{
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Encode Sans SC', sans-serif;
+  background-color: var(--btn-primary);
+  border-radius: 5px;
+}
 
+.form-control {
+  margin: 20px;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  height: 30px;
+  font-size: 17px;
+  font-family: 'Varela Round', sans-serif;
+}
