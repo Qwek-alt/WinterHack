@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
 
 :root{
   font-family: 'Varela Round', sans-serif;
@@ -8,11 +8,18 @@
   --text-secondary: #4c4b8eff;
   --bg-primary: #ab9df2ff;
   --bg-secondary: #27274bff;
+  --bg-secondary-2: #4c4b8eff;
   --btn-primary: #4c4b8eff;
+  --btn-text: white;
   --pop-up-bg: whitesmoke;
   --pop-up-text: #27274bff;
   margin: 0;
   padding: 0;
+}
+
+.App {
+  max-width: 1000px;
+  margin: auto;
 }
 
 body {
@@ -31,18 +38,21 @@ body {
 .btn {
   display: inline-block;
   background: var(--btn-primary);
-  color: var(--text-primary);
+  color: var(--btn-text);
   border: 2px solid var(--btn-primary);
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Encode Sans SC', sans-serif;
+  width: 150px;
 }
 
 .btn:hover {
-  background-color: var(--bg-primary);
+  color: var(--btn-primary);
+  background-color: var(--text-primary);
   border: 2px solid var(--btn-primary);
+  
   font-weight: bold;
 }
 
@@ -50,10 +60,17 @@ body {
   transform: scale(0.98)
 }
 
+.flashcard-list {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
 .flashcard {
   background-color: var(--bg-secondary);
   margin: 10px 5px;
-  padding: 10px 20px;
+  padding: 10px 20px 40px 10px;
   border-radius: 5px;
   display: block;
   justify-content: center;
@@ -66,6 +83,10 @@ body {
 .flashcard:active {
   --translate-y: -2px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+}
+
+.flashcard.flip {
+  background-color: var(--bg-secondary-2);
 }
 
 .toolbar {
@@ -98,8 +119,17 @@ body {
 }
 
 .add-form {
+  box-sizing: border-box;
+  width: 100%;
+  /* display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  gap: 1rem; */
+
   padding: 10px;
-  margin: 5px;
+  padding-right: 30px;
+  margin-right: 100px;
+  
   font-family: 'Encode Sans SC', sans-serif;
   background-color: var(--pop-up-bg);
   color: var(--pop-up-text);
@@ -107,11 +137,7 @@ body {
 }
 
 .form-control {
-  margin: 10px;
-}
-
-.form-control label {
-  display: block;
+  margin: 5px;
 }
 
 .form-control input[type=text] {
@@ -128,6 +154,29 @@ body {
 .form-control input[type=text]:focus{
   outline: none;
   border-bottom: 3px solid var(--bg-primary);
+}
+
+.btn-block {
+  width: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  color: var(--btn-primary);
+  display: inline-block;
+  background: var(--btn-text);
+  color: var(--btn-primary);
+  border: 2px solid var(--btn-primary);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Encode Sans SC', sans-serif;
+}
+
+.btn-block:hover {
+  background: var(--btn-primary);
+  color: var(--btn-text);
+  border: 2px solid var(--btn-primary);
+  font-weight: bold;
 }
 
 p {

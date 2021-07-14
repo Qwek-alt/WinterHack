@@ -8,7 +8,7 @@ const AddTask = ({ onAdd }) => {
         e.preventDefault()
 
         if (!question || !answer){
-            alert('Plase add a question and answer')
+            alert('Please add a question and an answer.')
             return
         }
 
@@ -39,7 +39,7 @@ const AddTask = ({ onAdd }) => {
                 />
             </div>
 
-            <input type='submit' value='Save Flashcard' className='btn'/>
+            <input type='submit' value='Save Flashcard' className='btn-block' />
         </form>
     )
 }
