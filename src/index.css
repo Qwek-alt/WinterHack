@@ -28,10 +28,6 @@ body {
   margin-bottom: 20px;
 }
 
-.header h1:hover{
-  color: var(--text-secondary);
-}
-
 .btn {
   display: inline-block;
   background: var(--btn-primary);
@@ -47,8 +43,71 @@ body {
 .btn:hover {
   background-color: var(--bg-primary);
   border: 2px solid var(--btn-primary);
+  font-weight: bold;
 }
 
 .btn:active {
   transform: scale(0.98)
 }
+
+
+.flashcard {
+  background-color: var(--bg-secondary);
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+
+  /* height: auto;
+  width: auto; */
+/* 
+  
+  transform-style: preserve-3d;
+  perspective: 1000px; */
+}
+
+.toolbar{
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.tag{
+  background-color: grey;
+  border: none;
+  border-radius: 25px;
+  color: var(--text-primary);
+  font-size: 10px;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+
+/* Horizontal Flip */
+/* .flashcard.flip{
+  transform: rotateY(180deg);
+} */
+
+
+/* Position front and back side */
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style back */
+.flashcard .back {
+  background-color: var(--bg-primary);
+  transform: rotateY(180deg);
+}
+
+
+
