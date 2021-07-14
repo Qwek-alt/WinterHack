@@ -5,21 +5,18 @@ import Header from './components/Header'
 import FlashcardList from './components/FlashcardList'
 import AddFlashcard from './components/AddFlashcard'
 
-
 function App() {
   const [showAddFlashcard, setShowAddFlashcard] = useState(true)
   const [flashcards, setFlashcards] = useState([
     {
       id: 1,
-      question: 'What is WinterHack?',
-      answer: 'A friendly 18 day hackathon to see what you will create in the winter break! 🐱‍💻',
-      source: 'CISSA\'s Facebook Page',
+      question: '👉 Poke Me to flip the card!',
+      answer: '👋 Hello There, Welcome to my WinterHack Project.',
     },
     {
       id: 2,
-      question: 'When is it?',
-      answer: 'WinterHack will be held from the 7th (Wednesday) to the 25th (Sunday) of July. Registration will remain open until the 12th of July. ❄️',
-      source: '',
+      question: '📝 Make New Cards using by filling in the form above.',
+      answer: '🗑️ Delete Cards by clicking on the trash bin.',
     }
   ])
 
