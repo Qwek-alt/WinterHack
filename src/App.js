@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './index.css'
 
-import { FaTrashAlt } from 'react-icons/fa'
 import Header from './components/Header'
 import FlashcardList from './components/FlashcardList'
 import AddFlashcard from './components/AddFlashcard'
@@ -12,13 +11,15 @@ function App() {
   const [flashcards, setFlashcards] = useState([
     {
       id: 1,
-      question: 'Question 1',
-      answer: 'Answer 1',
+      question: 'What is WinterHack?',
+      answer: 'A friendly 18 day hackathon to see what you will create in the winter break! 🐱‍💻',
+      source: 'CISSA\'s Facebook Page',
     },
     {
       id: 2,
-      question: 'Question 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam lobortis congue. Nam sit amet sem vitae urna consequat tincidunt. Aenean blandit sapien eu enim viverra fringilla.',
-      answer: 'Ut tincidunt et massa sed semper. Quisque sollicitudin risus in magna sagittis aliquam.',
+      question: 'When is it?',
+      answer: 'WinterHack will be held from the 7th (Wednesday) to the 25th (Sunday) of July. Registration will remain open until the 12th of July. ❄️',
+      source: '',
     }
   ])
 
