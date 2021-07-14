@@ -12,11 +12,20 @@ function App() {
       id: 1,
       question: '👉 Poke Me to flip the card!',
       answer: '👋 Hello There, Welcome to my WinterHack Project.',
+      tags: [
+        {
+          text: 'tag1',
+        },
+        {
+          text: 'english',
+        }
+      ],
     },
     {
       id: 2,
       question: '📝 Make New Cards using by filling in the form above.',
       answer: '🗑️ Delete Cards by clicking on the trash bin.',
+      tags: [],
     }
   ])
 
@@ -31,6 +40,11 @@ function App() {
   const deleteFlashcard = (id) => {
     setFlashcards(flashcards.filter((task) => task.id !== id))
   }
+
+  // Delete Tag
+  // const deleteTag = () => {
+
+  // }
 
 
   return (
