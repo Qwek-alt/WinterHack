@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
+import FlashcardHeader from './FlashcardHeader'
 
 const Flashcard = ({ flashcard, onDelete }) => {
     const [flip, setFlip] = useState(false)
@@ -10,16 +10,10 @@ const Flashcard = ({ flashcard, onDelete }) => {
             className={`flashcard ${flip ? 'flip' : ''}`}
             onClick={() => setFlip(!flip)}
         >
-            
-            <div className="toolbar">
-                <div className="tag">
-                    {flip ? 'ANSWER' : 'QUESTION'}
-                </div>
-                <div className="tool">
-                    <FaTrashAlt onClick={() => onDelete(flashcard.id)} />
-                </div>
-            </div>
-
+            <FlashcardHeader 
+                flip={flip} 
+                flashcard={flashcard}
+                onDelete={onDelete} />
             <div>
                 {flip ? flashcard.answer : flashcard.question}
             </div>

@@ -89,16 +89,17 @@ body {
   background-color: var(--bg-secondary-2);
 }
 
-.toolbar {
+.flashcard-header {
   width: 100%;
-  display: flex;
   padding-bottom: 10px;
-  justify-content: space-between;
-  align-items: center;
+  padding-left: 10px;
+  display: inline-flex;
+  gap: 1rem;
 }
 
 .tool {
   color: whitesmoke;
+  padding-top: 2px;
 }
 
 .tool:hover {
@@ -106,8 +107,16 @@ body {
   color: var(--bg-primary);
 }
 
-.tag {
+.label {
   display: inline-block;
+  font-family: 'Encode Sans SC', sans-serif;
+  color: var(--text-primary);
+  font-size: 10px;
+  padding-top: 5px;
+}
+
+.tag {
+  display: flex;
   font-family: 'Encode Sans SC', sans-serif;
   background-color: grey;
   border: none;
@@ -115,7 +124,6 @@ body {
   color: var(--text-primary);
   font-size: 10px;
   padding: 5px;
-  margin: 0 5px;
 }
 
 .add-form {
@@ -181,4 +189,9 @@ body {
 
 p {
   text-align: center;
+}
+
+a:hover {
+  color: var(--btn-primary); 
+  transform: scale(0.98)
 }
