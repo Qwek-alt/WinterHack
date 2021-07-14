@@ -3,10 +3,11 @@
 :root{
   font-family: 'Varela Round', sans-serif;
   font-size: 16px;
-  --text-primary: rgb(255, 253, 251);
-  --text-secondary: rgba(0, 255, 255, 1);
-  --bg-primary: rgba(18, 30, 44, 1);
-  --bg-secondary: rgba(109, 109, 109, 0.164);
+  --text-primary: #fff;
+  --text-secondary: #4c4b8eff;
+  --bg-primary: #ab9df2ff;
+  --bg-secondary: #27274bff;
+  --btn-primary: #4c4b8eff;
 }
 
 *{
@@ -19,16 +20,35 @@ body {
   background-color: var(--bg-primary); 
 }
 
-.main{
-  margin-left: 5rem;
-  padding-left: 1rem;
-}
-
-.sidebar {
-  position: fixed;
+.header {
+  margin: 10px;
   display: flex;
   justify-content: space-between;
-  width: 5rem;
-  height: 100vh;
-  background-color: var(--bg-secondary);
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1:hover{
+  color: var(--text-secondary);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--btn-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--btn-primary);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background-color: var(--bg-primary);
+  border: 2px solid var(--btn-primary);
+}
+
+.btn:active {
+  transform: scale(0.98)
 }
