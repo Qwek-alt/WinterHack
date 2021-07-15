@@ -1,11 +1,13 @@
 import React from 'react'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaBomb, FaRegQuestionCircle } from 'react-icons/fa'
 
 const Header = () => {
     return (
         <header className='header'>
-            <h1>WinterHack Project</h1>
-            <a href="https://github.com/Qwek-alt/WinterHack" target="_blank"><FaGithub size={40}/></a>
+            {/* <a><FaRegQuestionCircle className="header-btn" size={40} /></a> */}
+            <a><FaBomb className="header-btn" size={40} /></a>
+            
+            <a href="https://github.com/Qwek-alt/WinterHack" target="_blank"><FaGithub className="header-btn" size={40}/></a>
         </header>
     )
 }

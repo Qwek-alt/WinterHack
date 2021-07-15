@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const AddTask = ({ onAdd }) => {
+const AddFlashcardForm = ({ onAdd }) => {
     const [question, setQuestion] = useState('')
     const [answer, setAnswer] = useState('')
 
@@ -44,4 +44,4 @@ const AddTask = ({ onAdd }) => {
     )
 }
 
-export default AddTask
+export default AddFlashcardForm

@@ -1,18 +1,15 @@
 // Import React Dependncies
-import { useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
 
 // Import Stylesheet
 import './index.css'
 
 // Import Custom Components
 import Header from './components/Header'
-import FlashcardList from './components/FlashcardList'
-import AddFlashcard from './components/AddFlashcard'
-import SlateEditor from './SlateEditor'
+import FlashcardList from './components/Edit/FlashcardList'
+import { FaPlus} from 'react-icons/fa'
 
 function App() {
-  const [showAddFlashcard, setShowAddFlashcard] = useState(true)
-
   // Temporary Flashcard Array #TODO: backend database
   const [flashcards, setFlashcards] = useState([
     {
@@ -39,16 +36,11 @@ function App() {
     setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id))
   }
     
-
   return (
+    
     <div className="App">
-      <SlateEditor />
-      <Header 
-        onAdd={() => setShowAddFlashcard(!showAddFlashcard)}
-        showAdd={showAddFlashcard}
-      />
-
-      {showAddFlashcard && <AddFlashcard onAdd={addFlashcard} />}
+      <Header />
+      {/* <AddFlashcardForm onAdd={addFlashcard} /> */}
 
       {flashcards.length > 0 ? (
         <FlashcardList
@@ -57,7 +49,10 @@ function App() {
         />)
         : (<p><br></br>No Flashcards To Show. 🤷</p>)
       }
-
+      <div className="add-button">
+        <FaPlus className="btn" size={20} onClick={addFlashcard} />
+      </div>
+      
     </div>
   );
 }
