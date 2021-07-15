@@ -1,38 +1,29 @@
-import { useState } from 'react'
+// Import React Dependncies
+import { useEffect, useMemo, useState } from 'react'
+
+// Import Stylesheet
 import './index.css'
 
+// Import Custom Components
 import Header from './components/Header'
 import FlashcardList from './components/FlashcardList'
 import AddFlashcard from './components/AddFlashcard'
-import Tag from './components/Tag'
+import SlateEditor from './SlateEditor'
 
 function App() {
   const [showAddFlashcard, setShowAddFlashcard] = useState(true)
+
+  // Temporary Flashcard Array #TODO: backend database
   const [flashcards, setFlashcards] = useState([
     {
       id: 1,
       question: '👉 Poke Me to flip the card!',
       answer: '👋 Hello There, Welcome to my WinterHack Project.',
-      tags: [
-        {
-          id: 1,
-          text: 'tag1',
-        },
-        {
-          id: 2,
-          text: 'english',
-        }
-      ],
     },
     {
       id: 2,
       question: '📝 Make New Cards using by filling in the form above.',
       answer: '🗑️ Delete Cards by clicking on the trash bin.',
-      tags: [{
-        id: 1,
-        text: 'tag1'
-      }
-      ],
     }
   ])
 
@@ -47,9 +38,11 @@ function App() {
   const deleteFlashcard = (id) => {
     setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id))
   }
+    
 
   return (
     <div className="App">
+      <SlateEditor />
       <Header 
         onAdd={() => setShowAddFlashcard(!showAddFlashcard)}
         showAdd={showAddFlashcard}
