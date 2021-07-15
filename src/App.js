@@ -4,6 +4,7 @@ import './index.css'
 import Header from './components/Header'
 import FlashcardList from './components/FlashcardList'
 import AddFlashcard from './components/AddFlashcard'
+import Tag from './components/Tag'
 
 function App() {
   const [showAddFlashcard, setShowAddFlashcard] = useState(true)
@@ -14,9 +15,11 @@ function App() {
       answer: '👋 Hello There, Welcome to my WinterHack Project.',
       tags: [
         {
+          id: 1,
           text: 'tag1',
         },
         {
+          id: 2,
           text: 'english',
         }
       ],
@@ -25,7 +28,11 @@ function App() {
       id: 2,
       question: '📝 Make New Cards using by filling in the form above.',
       answer: '🗑️ Delete Cards by clicking on the trash bin.',
-      tags: [],
+      tags: [{
+        id: 1,
+        text: 'tag1'
+      }
+      ],
     }
   ])
 
@@ -38,14 +45,8 @@ function App() {
 
   // Delete Flashcard
   const deleteFlashcard = (id) => {
-    setFlashcards(flashcards.filter((task) => task.id !== id))
+    setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id))
   }
-
-  // Delete Tag
-  // const deleteTag = () => {
-
-  // }
-
 
   return (
     <div className="App">
