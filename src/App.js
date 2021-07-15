@@ -32,6 +32,10 @@ function App() {
     setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id))
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3eea8e5 (Add GitHub Link)
   return (
     <div className="App">
       <Header 
