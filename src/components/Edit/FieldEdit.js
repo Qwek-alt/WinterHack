@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SlatePlugins } from '@udecode/slate-plugins'
 
+
 const FieldEdit = ({ id }) => {
 
     const editableProps = {
@@ -10,13 +11,14 @@ const FieldEdit = ({ id }) => {
         },
       };
 
-      const [debugValue, setDebugValue] = useState('')
+    const [debugValue, setDebugValue] = useState('')
 
     return (
         <div>
             <SlatePlugins 
                 id={id}
                 editableProps={editableProps}
+                value={debugValue}
                 onChange={(newValue) => {
                     setDebugValue(newValue)
                 }}

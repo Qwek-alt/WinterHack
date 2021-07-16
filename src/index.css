@@ -57,8 +57,17 @@ body {
   font-weight: bold;
 }
 
+.header-btn {
+  color: var(--btn-primary);
+}
+
+.header-btn:hover {
+  transform: scale(0.98);
+  cursor: pointer;
+}
+
 .btn:active {
-  transform: scale(0.98)
+  transform: scale(0.98);
 }
 
 .flashcard-list {
@@ -193,16 +202,6 @@ body {
 
 p {
   text-align: center;
-}
-
-.header-btn {
-  color: var(--btn-text);
-}
-
-.header-btn:hover {
-  color: var(--btn-primary); 
-  transform: scale(0.98);
-  cursor: pointer;
 }
 
 .fields {

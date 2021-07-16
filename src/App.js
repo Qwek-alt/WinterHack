@@ -1,5 +1,6 @@
 // Import React Dependncies
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { io } from 'socket.io-client'
 
 // Import Stylesheet
 import './index.css'
@@ -35,7 +36,17 @@ function App() {
   const deleteFlashcard = (id) => {
     setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id))
   }
-    
+  
+  // Connect to socket.io
+
+  useEffect(() => {
+    const socket = io("http://localhost:30001")
+
+    return () => {
+        socket.disconnect()
+    }
+})  
+
   return (
     
     <div className="App">

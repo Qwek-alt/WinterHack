@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import FlashcardHeader from './FlashcardHeader'
 import FieldEdit from './FieldEdit'
 
