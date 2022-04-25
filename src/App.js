@@ -1,56 +1,49 @@
-import { useState } from 'react'
-import './index.css'
+import { useState } from "react";
+import "./index.css";
 
-import Header from './components/Header'
-import FlashcardList from './components/FlashcardList'
-import AddFlashcard from './components/AddFlashcard'
+import { useSelector, useDispatch } from "react-redux";
+import { add, remove } from "./app/slice";
+import Header from "./components/Header";
+import FlashcardList from "./components/FlashcardList";
+import AddFlashcard from "./components/AddFlashcard";
 
 function App() {
-  const [showAddFlashcard, setShowAddFlashcard] = useState(true)
-  const [flashcards, setFlashcards] = useState([
-    {
-      id: 1,
-      question: '👉 Poke Me to flip the card!',
-      answer: '👋 Hello There, Welcome to my WinterHack Project.',
-    },
-    {
-      id: 2,
-      question: '📝 Make New Cards using by filling in the form above.',
-      answer: '🗑️ Delete Cards by clicking on the trash bin.',
-    }
-  ])
+    const flashcards = useSelector((state) => state.flashcards.cards);
+    const dispatch = useDispatch();
 
-  // Add Flashcard
-  const addFlashcard = (flashcard) => {
-    const id = Math.floor(Math.random() * 1000) + 1
-    const newFlashcard = { id, ...flashcard }
-    setFlashcards([...flashcards, newFlashcard])
-  }
+    const [showAddFlashcard, setShowAddFlashcard] = useState(true);
 
-  // Delete Flashcard
-  const deleteFlashcard = (id) => {
-    setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id))
-  }
+    // Add Flashcard
+    const addFlashcard = (flashcard) => {
+        dispatch(add(flashcard));
+    };
 
-  return (
-    <div className="App">
-      <Header 
-        onAdd={() => setShowAddFlashcard(!showAddFlashcard)}
-        showAdd={showAddFlashcard}
-      />
+    // Delete Flashcard
+    const deleteFlashcard = (id) => {
+        dispatch(remove(id));
+    };
 
-      {showAddFlashcard && <AddFlashcard onAdd={addFlashcard} />}
+    return (
+        <div className="App">
+            <Header
+                onAdd={() => setShowAddFlashcard(!showAddFlashcard)}
+                showAdd={showAddFlashcard}
+            />
 
-      {flashcards.length > 0 ? (
-        <FlashcardList
-          flashcards={flashcards}
-          onDelete={deleteFlashcard}
-        />)
-        : (<p><br></br>No Flashcards To Show. 🤷</p>)
-      }
+            {showAddFlashcard && <AddFlashcard onAdd={addFlashcard} />}
 
-    </div>
-  );
+            {flashcards.length > 0 ? (
+                <FlashcardList
+                    flashcards={flashcards}
+                    onDelete={deleteFlashcard}
+                />
+            ) : (
+                <p>
+                    <br></br>No Flashcards To Show. 🤷
+                </p>
+            )}
+        </div>
+    );
 }
 
 export default App;
